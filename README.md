@@ -23,7 +23,7 @@ de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quier
 
 > [Juan Esteban Pamplona Mesa](https://github.com/JuanEstebanP04)
 
-Soy estudiante de ingeniería mecatrónica, me apasiona aprender sobre programación y automatización. 
+Soy estudiante de ingeniería mecatrónica, me apasiona aprender sobre programación y automatización, estoy en el programa para ampliar mis habilidades y conocimientos.  
 
 
 
