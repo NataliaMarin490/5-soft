@@ -15,7 +15,10 @@ Soy estudiante de ingeniería mecatrónica, me apasiona todo lo relacionado con 
  
  Estudiante de Ingeniería Mecatrónica, me gusta mantenerme al tanto de los avances tecnológicos, aprender idiomas y estar siempre en constante crecimiento académico y profesional. 
 
- > [Siguiente participante]
+ > [Yessid Samir Acosta Guatusmal](https://github.com/yesidacosta)
+ 
+Soy estudiante de Ingeniería de sistemas, me gusta el diseño de páginas web en mis ratos libres hago algunos ejercicios
+de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quiero mejorar mis capacidades en diseño web y programación.
 
 
 
