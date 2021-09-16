@@ -21,7 +21,9 @@ Soy estudiante de Ingeniería de sistemas, me gusta el diseño de páginas web e
 de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quiero mejorar mis capacidades en diseño web y programación.
 
 
+> [Juan Esteban Pamplona Mesa](https://github.com/JuanEstebanP04)
 
+Soy estudiante de ingeniería mecatrónica, me apasiona aprender sobre programación y automatización. 
 
 
 
