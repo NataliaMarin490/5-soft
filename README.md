@@ -25,7 +25,7 @@ de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quier
 
 Soy estudiante de ingeniería mecatrónica, me apasiona aprender sobre programación y automatización, estoy en el programa para ampliar mis habilidades y conocimientos.  
 
-Juan Camilo Villegas Aristizabal (https://github.com/Zhyex)
+>[Juan Camilo Villegas Aristizabal](https://github.com/Zhyex)
 
 Hola muchachos, yo soy Camilo Villegas, soy ingeniero de telecomunicaciones, al igual que ustedes y sin contar los cursos anteriores de este proceso, he trabajado con python, M, un poco de Js con angular y como tal soy gomoso por el estudio y pues con ganas de aprender constantemente
 
