@@ -18,7 +18,7 @@ Soy estudiante de ingeniería mecatrónica, me apasiona todo lo relacionado con 
  > [Yessid Samir Acosta Guatusmal](https://github.com/yesidacosta)
  
 Soy estudiante de Ingeniería de sistemas, me gusta el diseño de páginas web en mis ratos libres hago algunos ejercicios
-de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quiero mejorar mis capacidades en diseño web y programación.
+de diseño, aparte me gustan las actividades musicales. Estoy aquí porque quiero mejorar mis capacidades en diseño web. 
 
 
 > [Juan Esteban Pamplona Mesa](https://github.com/JuanEstebanP04)
