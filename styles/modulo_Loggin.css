@@ -9,14 +9,13 @@ body {
   }
   
   .waves {
-    background-image: url('/media/wavep.jpeg') ;
+    background-image: url('../media/wavep.jpeg') ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
   }
   
   .login {
