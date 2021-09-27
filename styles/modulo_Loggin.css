@@ -9,7 +9,7 @@ body {
   }
   
   .waves {
-    background-image: url('../assets/wavep.jpeg') ;
+    background-image: url('/media/wavep.jpeg') ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
