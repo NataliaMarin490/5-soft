@@ -11,7 +11,6 @@ body {
   }
   
   .waves {
-    
     background-image: url('../media/wavep.jpeg') ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,8 +31,8 @@ body {
     width: 60%;
   }
   
-  .login-data h1 {
-    font-weight: 200;
+  .login-data h2 {
+    font-weight: 150;
   }
   
   .input-group {
@@ -127,4 +126,18 @@ body {
     background-color: #ffffff;
     color: #b5040a;
   }
+
+  .img-registro{
+    background-image: url('https://i.imgur.com/EBqUCJa.png');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 100% -30% ;
+    justify-content: center;
+  }
   
+  .warp{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+  }

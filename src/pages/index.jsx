@@ -1,49 +1,27 @@
 import Componente from "../components/Componente";
-import "../styles/modulo_Loggin.css"
+import { Link } from 'react-router-dom';
+import imagentest from "../media/imagentest.png"
 
+
+
+import ComponenteBotonV from "../components/ComponenteBotonV";
 
 function Index() {
   return (
 
     <div>
         <Componente/>
+        <ComponenteBotonV usuario="andres" permiso="administrador" info="ninguna" nameboton="algo"/>
 
-        <main class="login-design">
-      
-      <div class="waves">
-       
-        <img src="https://raw.githubusercontent.com/NataliaMarin490/5-soft/Development/media/Login.png" width="350hv" height="350hv" />
-      </div>
-      <div class="login">
-        <div class="login-data">
-          
-          <img src="https://raw.githubusercontent.com/NataliaMarin490/5-soft/Development/media/Pizza.png" width="175hv" height="175hv" />
-          <h1>Inicio de Sesión</h1>
-          
-          <form action="#" class="login-form">
-            <div class="input-group">
-              <label class="input-fill">
-                <input type="email" name="email" id="email" required />
-                <span class="input-label">Correo Electrónico</span>
-                <i class="fas fa-envelope"></i>
-              </label>
-            </div>
-            <div class="input-group">
-              <label class="input-fill">
-                <input type="password" name="password" id="password" required />
-                <span class="input-label">Contraseña</span>
-                <i class="fas fa-lock"></i>
-              </label>
-            </div>
-           
-            <a href="#">¿Necesitas una Cuenta?</a>
-            
-            <input type="submit" value="Iniciar Sesión" class="btn-login" />
-          </form>
-        </div>
-      </div>
-    </main>
+        <span>Esta en pagina index</span><br/>
+        <Link to="Page1"> pagina Numero 1 </Link><br/>
+        <Link to="Page2"> pagina Numero 2 </Link><br/>
+        <Link to="Page3"> pagina Numero 3 </Link><br/>
+        <Link to="Page4"> pagina Numero 4 </Link><br/>
+        <Link to="Page5"> pagina Numero 5 </Link><br/>
+        <Link to="Page6"> pagina Numero 6 </Link><br/>
 
+ 
     </div>
 
 
