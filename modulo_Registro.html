@@ -13,23 +13,35 @@
       crossorigin="anonymous"
     />
     <!--CSS-->
-    <link rel="stylesheet" href="styles/modulo_Loggin.css" />
-    <title>Login</title>
+    <link rel="stylesheet" href="styles/modulo_Registro.css" />
+    <title>Registro</title>
   </head>
   <body>
     <main class="login-design">
       <!--Imagen de olas-->
       <div class="waves">
         <!--Imagen de login-->
-        <img src="media/Login.png" width="350hv" height="350hv" />
+        <div class="img-registro"></div>
       </div>
       <div class="login">
         <div class="login-data">
-          <!--Imagen de inicio sesión-->
-          <img src="media/Pizza.png" width="175hv" height="175hv" />
-          <h1>Inicio de Sesión</h1>
+          <h2>Registro de Usuario</h2>
           <!--Formulario-->
           <form action="#" class="login-form">
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="text" />
+                <span class="input-label">Nombre Completo</span>
+                <i class="fas fa-user-friends"></i>
+              </label>
+            </div>
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="number" />
+                <span class="input-label">Número de identificación</span>
+                <i class="fas fa-id-card"></i>
+              </label>
+            </div>
             <div class="input-group">
               <label class="input-fill">
                 <input type="email" pattern=".+@gmail.com" title="Por favor, ingresar una dirección de correo de Gmail" name="email" id="email" required />
@@ -44,10 +56,25 @@
                 <i class="fas fa-lock"></i>
               </label>
             </div>
-            <!--Link-->
-            <a href="modulo_registro.html" target="_blank">¿Necesitas una Cuenta? </a>
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="password" name="password" id="password" required />
+                <span class="input-label">Verificar Contraseña</span>
+                <i class="fas fa-lock-open"></i>
+              </label>
+            </div>
+            <div class="input-group">
+              <div class="warp">
+                  <h3>Seleccione el Rol</h3>
+                  <input type="radio" name="rol" id="Administrador"/>
+                  <label for="Administrador">Administrador</label>
+
+                  <input type="radio" name="rol" id="Vendedor"/>
+                  <label for="Vendedor">Vendedor</label>
+              </div>
+          </div>
             <!--Boton-->
-            <input type="submit" value="Iniciar Sesión" class="btn-login" />
+            <input type="submit" value="Registrar" class="btn-login" />
           </form>
         </div>
       </div>
