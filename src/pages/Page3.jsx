@@ -47,7 +47,6 @@ function Page3() {
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
-
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
@@ -64,16 +63,10 @@ function Page3() {
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
-
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
 <ComponenteBotonB usuario="andres" nameboton3="ACEPTAR"/>
-
-
-
-
-
 
 
 </td>

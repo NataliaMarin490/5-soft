@@ -1,0 +1,59 @@
+table.TablaDIV2 {
+    border: 1px solid #1C6EA4;
+    background-color:rgba(25,65,65,.2);
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    
+    position:sticky;   
+    overflow-y:scroll; 
+     
+    
+    
+  }
+  table.TablaDIV2 td, table.TablaDIV2 th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+    
+    
+  }
+  table.TablaDIV2 tbody td {
+    font-size: 13px;
+    
+  }
+
+  div.div1 {
+    overflow:scroll;
+    height: 100vh;
+    width: 20%;
+
+}
+
+
+div.div2 {
+    width: 60%;
+    position: absolute;
+    transform: translate(500px,-700px);
+
+}
+
+
+
+input[type=text] {
+    width: 500px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("https://i.imgur.com/iCIyNrg.png");
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
