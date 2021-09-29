@@ -1,11 +1,21 @@
 
-bodyR{
-  /*background-color: blue;*/
+/*body{
+  background-color: blue;
   background-image:url("../media/fondoRoles.png");
   overflow:scroll;
   transform: translate(-100px,100px);
   
 
+  }*/
+
+  div.algo {  
+    background-image:url("../media/fondoRoles.png");
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    
+
+ 
   }
 
 
@@ -27,70 +37,62 @@ bodyR{
      }
 
 
-     table.blueTable {
-      
-      
+     table.Marco {
       margin: auto;
-      border: 3px solid #FFFFFF;
-      background-color:transparent;
+      border: 4px solid #ffffff;
+      background-color: transparent;
       width: 80%;
+      height: auto;
       text-align: center;
       border-collapse: collapse;
-
-      
-
-      
+      transform: translate(-100px,80px);
+      overflow-y: scroll;
     }
-    table.blueTable td, table.blueTable th {
-      border: 3px solid #FFFFFF;
+    table.Marco td, table.Marco th {
+      border: 4px solid #FFFFFF;
+      padding: 0px 0px;
+    }
+    table.Marco tbody td {
+      font-size: 13px;
+      color: #FFFFFF;
+    }
+
+
+    table.FILA {
+      border: 1px solid #FFFFFF;
+      background-color:transparent;
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    table.FILA td, table.FILA th {
+      border: 1px solid white;
+      padding: 6px 2px;
+    }
+    table.FILA tbody td {
+      font-size: 13px;
+      color: #FFFFFF;
+    }
+    table.FILA tr:nth-child(even) {
+      background: #D0E4F5;
+    }
+
+    table.Cabecera {
+      border: 0px solid #1C6EA4;
+      background-color:transparent;
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    table.Cabecera td, table.Cabecera th {
+      border: 0px solid #AAAAAA;
       padding: 3px 2px;
     }
-    table.blueTable tbody td {
-      font-size: 13px;
+    table.Cabecera tbody td {
+      font-size: 20px;
       font-weight: bold;
       color: #FFFFFF;
     }
-    table.blueTable thead {
-        border-bottom: 2px solid #FFFFFF;
+    table.Cabecera tr:nth-child(even) {
+      background: #D0E4F5;
     }
-    table.blueTable thead th {
-      font-size: 15px;
-      font-weight: bold;
-      color: #FFFFFF;
-      text-align: center;
-      border-left: 2px solid #FFFFFF;
-    }
-    table.blueTable thead th:first-child {
-      border-left: none;
-    }
-    
-    table.blueTable tfoot {
-      font-size: 14px;
-      font-weight: bold;
-      color: #FFFFFF;
-      background: transparent;
-      background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-      background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-      background: linear-gradient(to bottom, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-      border-top: 2px solid #FFFFFF;
-    }
-
-  
-   /* titulos*/
-
-   table.Titulo {
-    background-color: transparent;
-    width: 100%;
-    height: 200%;
-    text-align: center;
-   
-   
-  }
-
-  table.Titulo tbody td {
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFFFFF;
-
-    
-  }

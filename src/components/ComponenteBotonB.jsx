@@ -1,9 +1,13 @@
 
 
 
+import logoLogin from "../media/logoLogin.png"
 
 
-function ComponenteBotonV(props) {
+
+
+
+function ComponenteBotonB(props) {
 
   return (
 
@@ -21,8 +25,8 @@ function ComponenteBotonV(props) {
             <option value="value3">Usuario</option>
           </select>
           </td>
-<td><input type="submit" value={props.nameboton1} class="button" /></td>
-<td><input type="submit" value={props.nameboton2} class="button" /></td>
+<td><img src={logoLogin} alt="" /> <br/>ESTADO PENDIENTE</td>
+<td><input type="submit" value={props.nameboton3} class="button" /></td>
 </tr>
 </tbody>
 </table>
@@ -36,4 +40,4 @@ function ComponenteBotonV(props) {
   );
 }
 
-export default ComponenteBotonV;
+export default ComponenteBotonB;
