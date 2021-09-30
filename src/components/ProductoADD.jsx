@@ -13,15 +13,24 @@ function ProductoADD(props) {
 
 
     <div>
+      
 
 <body>
 
 
 <div class="container">
+  
+
 <img src={props.LaURL} alt=""  /> 
 
   
-  <button class="btn" >🛒 Agregar </button>
+  <button class="btn" >🛒 Agregar  <br/>
+  💲<strong>{props.ElPRECIO}</strong> !! 🤑<br/> 
+  🍕{props.ElNOMBRE}
+   </button>
+
+   
+  
   
 </div>
 
