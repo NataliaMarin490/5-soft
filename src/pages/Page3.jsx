@@ -8,12 +8,14 @@ import "../styles/modulo_Gestion_Roles.css"
 
 
 
+
+
 function Page3() {
 
     return(
         <div class="algo">
 
-        <span>Esta en pagina 3 </span>
+        <span>Esta en pagina 3 gestion roles y aceptar nuevos users </span>
         <Link to="index"> pagina inicial </Link>
 
 <table class="Marco">
@@ -32,6 +34,11 @@ function Page3() {
 </table>
 
 <br/><br/><br/><br/>
+
+
+
+
+
 
 <table class="Marco">
 <tbody>

@@ -10,7 +10,7 @@ function Page2() {
 
         <div>
 
-        <span>Esta en pagina 2</span>
+        <span>Esta en pagina 2 de registro</span>
         <Link to="index"> pagina inicial </Link>
 
         <main class="login-design">

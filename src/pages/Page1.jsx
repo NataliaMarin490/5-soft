@@ -14,7 +14,7 @@ function Page1() {
 
         <div>
 
-        <span>Esta en pagina 1</span>
+        <span>Esta en pagina 1 de Loggin</span>
         <Link to="index"> pagina inicial </Link>
 
         <main class="login-design">

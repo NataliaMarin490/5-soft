@@ -1,8 +1,10 @@
 .container {
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     height: 30vh;
+    padding-left: 12px;
+
   }
   
   .container img {
@@ -10,6 +12,7 @@
     height: 80%;
     border-radius: 50px 50px 120px 50px;
     border: 3px solid #555;
+    
   }
   
   .container .btn {
