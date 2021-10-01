@@ -15,7 +15,7 @@ function Page3() {
     return(
         <div class="algo">
 
-        <span>Esta en pagina 3 gestion roles y aceptar nuevos users </span>
+        <span>  <font color="white">Esta en pagina 3 Gestion de roles</font> </span>
         <Link to="index"> pagina inicial </Link>
 
 <table class="Marco">
