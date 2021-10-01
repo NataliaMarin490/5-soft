@@ -19,7 +19,7 @@ function BarraDeBusqueda(props) {
 
 
 <form>
-  <input class="input2" type="text" name="search" placeholder="   BUSQUEDA POR:  ID  PRODUCTO "/>
+  <input class="input2" type="text" name="search" placeholder={props.search}/>
 </form>
 
 </body>

@@ -43,7 +43,7 @@ function Page4() {
 
 
             <div class="div1">
-                <BarraDeBusqueda />
+                <BarraDeBusqueda search="Busqueda Menu"/>
                 <CajaVS produc={productos} />
 
             </div>
