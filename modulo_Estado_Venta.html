@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modulo_Estado_Venta</title>
+    <link rel="stylesheet" href="./styles/modulo_Estado_Venta.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="text-center">Pedidos</h1>
+    <div id="stepProgressBar">
+        <div class="step">
+            <p class="step-text">Confirmación</p>
+            <div class="bullet">1</div>
+        </div>
+        <div class="step">
+            <p class="step-text">Preparación</p>
+            <div class="bullet">2</div>
+        </div>
+        <div class="step">
+            <p class="step-text">Entregado</p>
+            <div class="bullet">3</div>
+        </div>
+        <div class="step">
+            <p class="step-text">Finalizado</p>
+            <div class="bullet ">4</div>
+        </div>
+    </div>
+    <div id="main">
+        <p id="content"  class="text-center">Ingresar pedido</p>
+        <button id="previousBtn" >Anterior</button>
+        <button id="nextBtn">Siguiente</button>
+        <button id="finishBtn" >Finalizar</button>
+    </div>
+    </div>
 </body>
 </html>
