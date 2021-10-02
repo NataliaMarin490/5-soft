@@ -18,7 +18,7 @@ function ProductoADD(props) {
 <body>
 
 
-<div class="container">
+<div class="container1">
   
 
 <img src={props.LaURL} alt=""  /> 

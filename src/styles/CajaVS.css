@@ -33,8 +33,8 @@ table.TablaDIV2 {
     background-position-x: 95%;
     background-position-y: 30%;
     background-size: 15%;
-    
-    
+
+     
 
 }
 
@@ -50,7 +50,7 @@ div.div2 {
 
 
 input.input2[type=text] {
-    width: 43%;
+    width: 49%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -71,7 +71,3 @@ input.input2[type=text] {
 
 
   
-
-
-
-
