@@ -24,15 +24,15 @@ function App() {
     <Router>
         <Switch>
 
-        <Route path='/Page1' exact>
+        <Route path='/Page1' >
             <Page1 />
           </Route>
 
-          <Route path='/Page2' exact>
+          <Route path='/Page2'>
             <Page2 />
           </Route>  
 
-          <Route path='/Page3' exact>
+          <Route path='/Page3'>
             <Page3 />
           </Route> 
 
