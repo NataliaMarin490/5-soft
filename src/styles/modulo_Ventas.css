@@ -1,0 +1,27 @@
+
+div.pagina{
+background-image: url("https://i.imgur.com/4lC4X7C.png");
+background-repeat: no-repeat;
+background-position-x: center;
+/*background-size: cover;*/
+background-color:rgb(0, 0, 0,0.88);
+background-blend-mode:saturation;
+transform: translate(0,0);
+font:13px Arial, Helvetica, sans-serif; 
+
+color:#ffffff; 
+
+
+
+overflow-x: hidden;
+overflow-y: hidden;
+
+}
+
+form.FORMULARIO{
+    
+    text-align: right;
+    font-size: 20px;
+
+    
+}
