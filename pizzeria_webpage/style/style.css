@@ -21,6 +21,7 @@ body {
     background-color: #faf6f2;
     min-height: 300px;
     max-width: 1460px;
+    overflow-x: hidden;
 }
 
 /* Inicio de estilos de la Barra de navegación*/
