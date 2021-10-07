@@ -19,3 +19,10 @@ div.invetariopage{
   
 }
 
+table.TablaInventario thead{
+  font-size: 18px;
+  font-weight: bold ;
+  color:whitesmoke ;
+
+}
+
