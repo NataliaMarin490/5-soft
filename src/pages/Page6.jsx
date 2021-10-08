@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import BaseDatosPruebas from '../components/BaseDatosPruebas';
 import "../styles/modulo_Inventarios.css"
-
 import react, { useEffect, useState } from 'react'
+import axios from "axios";
+
+
 
 
 
@@ -32,14 +34,46 @@ function Page6() {
 
   useEffect(() => {
     //Aqui voy a jalar info de la base datos
-    setProductos(BaseFake)
+
+const options = {method: 'GET', url: 'http://localhost:5000/productos'};
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+  setProductos(response.data)
+}).catch(function (error) {
+  console.error(error);
+});
+
+    
 
   }, []);
 
 
-  const enviarBaseDatos = () => {
+  const enviarBaseDatos = async () => {
     console.log(`enviado back , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
     setProductos([...Productos, { idProducto: Id, descripcionProducto: Descripcion, valorProducto: Precio, inventarioProducto: Cantidad }]);
+
+
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/productos/nuevo',
+      headers: {'Content-Type': 'application/json'},
+      data: {
+        idProducto: Id,
+        descripcionProducto: Descripcion,
+        valorProducto: Precio,
+        inventarioProducto: Cantidad
+      }
+    };
+    
+    
+    await axios
+    .request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+    
 
   }
 
@@ -80,9 +114,9 @@ function Page6() {
             </tr>
           </thead>
           <tbody>
-            {ListaProductos.map((x) => {
+            {ListaProductos.map((x , index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>{x.idProducto}</td>
                   <td>{x.descripcionProducto}</td>
                   <td>{x.valorProducto}</td>
