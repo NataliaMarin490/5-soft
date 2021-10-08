@@ -30,6 +30,7 @@ function Page6() {
   const [Cantidad, setcantidad] = useState();
   const [Busqueda, setBusqueda] = useState("");
   const [FiltroProductos, setFiltroProductos] = useState(Productos);
+  const [IdBase, setIdBase] = useState()
 
 
   useEffect(() => {
@@ -47,6 +48,50 @@ axios.request(options).then(function (response) {
     
 
   }, []);
+
+  const borrarBaseDatos = async () => {
+    console.log(`esto es lo que va borrar , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
+
+
+const options = {
+  method: 'DELETE',
+  url: 'http://localhost:5000/productos/borra',
+  headers: {'Content-Type': 'application/json'},
+  data: {id: IdBase}
+};
+
+await axios.
+request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
+});
+
+  
+  }
+
+  const actualizarBaseDatos = async () => {
+    console.log(`esto es lo que va borrar , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
+
+    const options = {
+      method: 'PATCH',
+      url: 'http://localhost:5000/productos/edita',
+      headers: {'Content-Type': 'application/json'},
+      data: {id: IdBase,         
+        idProducto: Id,
+        descripcionProducto: Descripcion,
+        valorProducto: Precio,
+        inventarioProducto: Cantidad}
+    };
+    
+    await axios.
+    request(options).then(function (response) {
+      console.log(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+  }
 
 
   const enviarBaseDatos = async () => {
@@ -111,6 +156,7 @@ axios.request(options).then(function (response) {
               <th>Precio</th>
               <th>Cantidad</th>
               <th>Total</th>
+              <th>ID Base Datos</th>
             </tr>
           </thead>
           <tbody>
@@ -122,6 +168,7 @@ axios.request(options).then(function (response) {
                   <td>{x.valorProducto}</td>
                   <td>{x.inventarioProducto}</td>
                   <td>{x.valorProducto * x.inventarioProducto}</td>
+                  <td>{x._id} </td>
                 </tr>
               );
             })}
@@ -153,12 +200,17 @@ axios.request(options).then(function (response) {
         <input type="text" value={Id} onChange={(e) => { setId(e.target.value) }} placeholder="ID #️⃣" />
         <input type="text" value={Descripcion} onChange={(e) => { setDescripcion(e.target.value) }} placeholder="Descripcion 🎫" />
         <input type="text" value={Precio} onChange={(e) => { setprecio(e.target.value) }} placeholder="Precio 💲" />
-        <input type="text" value={Cantidad} onChange={(e) => { setcantidad(e.target.value) }} placeholder="Cantidad #" />
+        <input type="text" value={Cantidad} onChange={(e) => { setcantidad(e.target.value) }} placeholder="Cantidad ☰" />
         <input type="button" onClick={(e) => {
           enviarBaseDatos(); console.log(" | La variable Id = ", Id + " | La variable Descripcion = ", Descripcion + " | La variable precio= ",
             Precio + " | El search es = ", Busqueda)
-        }} value="Actualizar 🔄" />
-        <input type="reset" value="Borrar ❌"></input>
+        }} value="Guardar ☁️" />
+        <input type="button" value="Borrar ❌"  onClick={(e) => {
+          borrarBaseDatos();}}></input>
+        <input type="button" value="Actualizar 🔄"  onClick={(e) => {
+          actualizarBaseDatos();}}></input>
+        <input type="text"  onChange={(e) => { setIdBase(e.target.value) }} placeholder=" # ID Base Datos" />
+        
       </form>
 
 
