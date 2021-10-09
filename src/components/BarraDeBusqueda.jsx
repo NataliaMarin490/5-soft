@@ -1,7 +1,5 @@
 import react, {useEffect,useState} from 'react'
 
-
-
 function BarraDeBusqueda(props) {
 
   const [Busqueda,setBusqueda] = useState("");

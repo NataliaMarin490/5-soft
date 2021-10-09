@@ -33,23 +33,25 @@ function Index() {
                     </div>
                 </nav>
 
-                <ul className="pizza_list">
-                    <li className="pizza_item">
-                        <i className="fas fa-pizza-slice"></i>
-                        <a className="pizza_link" href="Page3">Gestión de Roles</a>
-                    </li>
-                    <li className="pizza_item">
-                        <i className="fas fa-pizza-slice"></i>
-                        <a className="pizza_link" href="Page4">Módulo de Ventas</a>
-                    </li>
-                    <li className="pizza_item">
-                        <i className="fas fa-pizza-slice"></i>
-                        <a className="pizza_link" href="Page5">Estado de Ventas</a>
-                    </li>
-                    <li className="pizza_item">
-                        <i className="fas fa-pizza-slice"></i>
-                        <a className="pizza_link" href="Page6">Inventario</a>
-                    </li>
+                <ul>
+                    <div className="navbar">
+                        <li className="pizza_item">
+                            <i className="fas fa-pizza-slice"></i>
+                            <a className="pizza_link" href="Page3">Gestión de Roles</a>
+                        </li>
+                        <li className="pizza_item">
+                            <i className="fas fa-pizza-slice"></i>
+                            <a className="pizza_link" href="Page4">Módulo de Ventas</a>
+                        </li>
+                        <li className="pizza_item">
+                            <i className="fas fa-pizza-slice"></i>
+                            <a className="pizza_link" href="Page5">Estado de Ventas</a>
+                        </li>
+                        <li className="pizza_item">
+                            <i className="fas fa-pizza-slice"></i>
+                            <a className="pizza_link" href="Page6">Inventario</a>
+                        </li>
+                    </div>
                 </ul>
 
                 {/* <!-- Seccion slider --> */}

@@ -6,8 +6,14 @@ import Login from "../media/Login.png"
 function Page1() {
   return (
     <div>
-      <span>Esta en pagina 1 de Loggin</span>
-      <Link to="index"> pagina inicial </Link>
+      <ul>
+        <div className="navbar1">
+          <li className="pizza_item1">
+            <i className="fas fa-pizza-slice"></i>
+            <a className="pizza_link1" href="Index">Página Principal</a>
+          </li>
+        </div>
+      </ul>
       <main class="login-design">
         <div class="waves">
           <img src={Login} width="350hv" height="350hv" />
@@ -31,7 +37,7 @@ function Page1() {
                   <i class="fas fa-lock"></i>
                 </label>
               </div>
-              <a href="modulo_registro.html" target="_blank">¿Necesitas una Cuenta? </a>
+              <a href="Page2" target="_blank">¿Necesitas una Cuenta? </a>
               <input type="submit" value="Iniciar Sesión" class="btn-login" />
             </form>
           </div>

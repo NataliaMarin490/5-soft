@@ -1,20 +1,11 @@
-
-
 function Cabecera(props) {
-
   return (
-
-
-<table class="Cabecera">
-<tbody>
-<tr>
-<td>{props.cabeza}</td></tr>
-</tbody>
-
-</table>
-
-
-
+    <table class="Cabecera">
+      <tbody>
+        <tr>
+          <td>{props.cabeza}</td></tr>
+      </tbody>
+    </table>
   );
 }
 
