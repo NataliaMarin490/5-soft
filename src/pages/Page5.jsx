@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import "../styles/modulo_Estado_Venta.css"
 
 
-
-
-
 function Page5() {
 
     return(

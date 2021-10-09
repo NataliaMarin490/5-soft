@@ -1,17 +1,11 @@
 import { Link } from 'react-router-dom';
-
 import ProductoADD from '../components/ProductoADD';
 import CajaVS from '../components/CajaVS';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
-
 import "../styles/CajaVS.css"
 import "../styles/ProductoADD.css"
 import "../styles/Rotate.css"
-
 import "../styles/modulo_Ventas.css"
-
-
-
 
 function Page4() {
 

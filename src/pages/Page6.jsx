@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import BaseDatosPruebas from '../components/BaseDatosPruebas';
 import "../styles/modulo_Inventarios.css"
-
 import react, { useEffect, useState } from 'react'
-
-
 
 function Page6() {
 
