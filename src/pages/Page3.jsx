@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom';
-
+import axios from "axios";
 import ComponenteBotonV from "../components/ComponenteBotonV";
 import ComponenteBotonB from '../components/ComponenteBotonB';
 import Cabecera from '../components/Cabecera';
-
 import "../styles/modulo_Gestion_Roles.css"
-
-
-
 import react, { useEffect, useState} from "react"
 
 
@@ -17,53 +13,40 @@ import react, { useEffect, useState} from "react"
 function Page3() {
 
 
-    const BaseFakeUsers =
+/*     const BaseFakeUsers =
     [
-      { idUsuario: 1, nombreUsuario: "User1", rolUsuario: "pendiente" },
-      { idUsuario: 2, nombreUsuario: "User2", rolUsuario: "pendiente" },
-      { idUsuario: 3, nombreUsuario: "User3", rolUsuario: "pendiente" },
-      { idUsuario: 4, nombreUsuario: "User4", rolUsuario: "pendiente" },
-      { idUsuario: 5, nombreUsuario: "User5", rolUsuario: "pendiente" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User1", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User2", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User3", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User4", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User5", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "vendedor" },
+      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User6", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "administrador" },
 
-    ]
+    ] */
 
-    const BaseFakeUsersPendientes =
-    [
-      { idUsuarioPendiente: 6, nombreUsuarioPendiente: "User6", rolUsuarioPendiente: "pendiente" },
-      { idUsuarioPendiente: 7, nombreUsuarioPendiente: "User7", rolUsuarioPendiente: "pendiente" },
-      { idUsuarioPendiente: 8, nombreUsuarioPendiente: "User8", rolUsuarioPendiente: "pendiente" },
-      { idUsuarioPendiente: 9, nombreUsuarioPendiente: "User9", rolUsuarioPendiente: "pendiente" },
-      { idUsuarioPendiente: 10, nombreUsuarioPendiente: "User10", rolUsuarioPendiente: "pendiente" },
-
-    ]
+   
     //////////////
     const [Usuarios,setUsuarios] =useState([])
-    const [idUsuario, setidUsuario] = useState()
     const [nombreUsuario, setnombreUsuario] = useState()
+    const [numeroIdentificacion, setnumeroIdentificacion] = useState()
+    const [correoElectronico, setcorreoElectronico] = useState()
+    const [password, setpassword] = useState()
     const [rolUsuario, setrolUsuario] = useState()
     ////////////
-    const [UsuariosPendintes,setUsuariosPendintes] =useState([])
-    const [idUsuarioPendiente, setidUsuarioPendiente] = useState()
-    const [nombreUsuarioPendiente, setnombreUsuarioPendiente] = useState()
-    const [rolUsuarioPendiente, setrolUsuarioPendiente] = useState()
-
+   
     
 
     useEffect(() => {
-//Aqui voy a jalar info de la base datos usuario
-        setUsuarios(BaseFakeUsers)
-        
-
-        
+const options = {method: 'GET', url: 'http://localhost:5000/usuarios'};
+axios.request(options).then(function (response) {
+  console.log(response.data);
+  setUsuarios(response.data)
+}).catch(function (error) {
+  console.error(error);
+});      
     }, [])
 
-    useEffect(() => {
-//Aqui voy a jalar info de la base datos usuariosPendientes
-                
-        setUsuariosPendintes((BaseFakeUsersPendientes))
-        
-                
-    }, [])
+   
 
 
 
@@ -86,28 +69,32 @@ function Page3() {
 
           < thead>
             <tr>
-              <th>ID Usuario</th>
-              <th>Nombre Usuario</th>
+              <th>Nombre de Usuario</th>
+              <th>Numero de identificacion</th>
+              <th>Correo Electronico</th>
+              <th>password</th>
               <th>Rol Usuario</th>
               <th>Editar</th>
               <th>Borrar</th>
             </tr>
           </thead>
 
-{Usuarios.map((x) => {
+{Usuarios.map((x, index) => {
     return( 
          
         <tbody>
 
-         <tr>
-        <td> {x.idUsuario} </td> 
+        <tr key={index}>
         <td> {x.nombreUsuario} </td> 
-        <td>
-          <select name="select">
+        <td> {x.numerodeIdentificacion} </td>
+        <td> {x.correoElectronico} </td> 
+        <td> {x.password} </td>  
+        <td> <input type="text" value={x.rolUsuario} />
+{/*           <select name="select">
             <option value="value1">Administrador</option>
             <option value="value2"selected>Vendedor</option>
             
-          </select>
+          </select> */}
           </td>
 
 <td><input type="submit" value="editar" class="button" /></td>
@@ -148,24 +135,27 @@ function Page3() {
 <table class="FILA">
 
 < thead>
-  <tr>
-    <th>ID Usuario</th>
-    <th>Nombre Usuario</th>
-    <th>Rol Usuario</th>
-    <th>Editar Rol</th>
-    <th>Aceptar Petición</th>
-  </tr>
-</thead>
+            <tr>
+              <th>Nombre de Usuario</th>
+              <th>Numero de identificacion</th>
+              <th>Correo Electronico</th>
+              <th>password</th>
+              <th>Rol Usuario</th>
+              <th>Aceptar Petición</th>
 
-{UsuariosPendintes.map((x) => {
+            </tr>
+  </thead>
+
+{Usuarios.map((x, index) => {
 return( 
 
 <tbody>
 
-<tr>
-<td> {x.idUsuarioPendiente} </td> 
-<td> {x.nombreUsuarioPendiente} </td>
-<td> {x.rolUsuarioPendiente} </td>  
+<tr key={index}>
+<td> {x.nombreUsuario} </td> 
+<td> {x.numerodeIdentificacion} </td>
+<td> {x.correoElectronico} </td> 
+<td> {x.password} </td>   
 <td>
 <select name="select">
   <option value="value1">Administrador</option>
