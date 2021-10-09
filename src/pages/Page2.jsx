@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import "../styles/modulo_Registro.css"
 
 function Page2() {
-  return (
+  return ( 
     <div>
       <ul>
         <div className="navbar2">

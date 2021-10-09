@@ -3,7 +3,7 @@ import "../styles/modulo_Loggin.css"
 import Pizza from "../media/Pizza.png"
 import Login from "../media/Login.png"
 
-function Page1() {
+function Page1() { 
   return (
     <div>
       <ul>
@@ -20,12 +20,11 @@ function Page1() {
         </div>
         <div class="login">
           <div class="login-data">
-            <img src={Pizza} width="175hv" height="175hv" />
             <h1>Inicio de Sesión</h1>
             <form action="#" class="login-form">
               <div class="input-group">
                 <label class="input-fill">
-                  <input type="email" pattern=".+@gmail.com" title="Por favor, ingresar una dirección de correo de Gmail" name="email" id="email" required />
+                  <input type="email"  pattern=".+@gmail.com" title="Por favor, ingresar una dirección de correo de Gmail" name="email" id="email" required />
                   <span class="input-label">Correo Electrónico</span>
                   <i class="fas fa-envelope"></i>
                 </label>
