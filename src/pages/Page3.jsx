@@ -5,19 +5,7 @@ import "../styles/modulo_Gestion_Roles.css"
 import react, { useEffect, useState } from "react"
 
 function Page3() {
-/*     const BaseFakeUsers =
-    [
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User1", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User2", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User3", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User4", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User5", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "vendedor" },
-      { nombreUsuario: "anonimooo", numerodeIdentificacion: "User6", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "administrador" },
 
-    ] */
-
-   
-    //////////////
     const [Usuarios,setUsuarios] =useState([])
     const [nombreUsuario, setnombreUsuario] = useState()
     const [numerodeIdentificacion, setnumerodeIdentificacion] = useState()
@@ -25,7 +13,7 @@ function Page3() {
     const [password, setpassword] = useState()
     const [rolUsuario, setrolUsuario] = useState()
     const [idBase, setidBase] = useState()
-    ////////////
+  
    
     
 
@@ -84,6 +72,7 @@ axios.request(options).then(function (response) {
 
   
   return (
+    <>
     <div class="algo">
       <ul>
         <div className="navbar3">
@@ -264,7 +253,7 @@ console.log("se va enviar a este ID --> " ,idBase,nombreUsuario,numerodeIdentifi
 
 
 </div>
-)
+</>)
 }
 
 export default Page3;
