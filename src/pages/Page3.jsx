@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import ComponenteBotonV from "../components/ComponenteBotonV";
-import ComponenteBotonB from '../components/ComponenteBotonB';
 import Cabecera from '../components/Cabecera';
 import "../styles/modulo_Gestion_Roles.css"
-import react, { useEffect, useState} from "react"
-
-
-
-
+import react, { useEffect, useState } from "react"
 
 function Page3() {
-
-
 /*     const BaseFakeUsers =
     [
       { nombreUsuario: "anonimooo", numerodeIdentificacion: "User1", correoElectronico: "asdf@asdf", password: "123", rolUsuario: "pendiente" },
@@ -28,10 +20,11 @@ function Page3() {
     //////////////
     const [Usuarios,setUsuarios] =useState([])
     const [nombreUsuario, setnombreUsuario] = useState()
-    const [numeroIdentificacion, setnumeroIdentificacion] = useState()
+    const [numerodeIdentificacion, setnumerodeIdentificacion] = useState()
     const [correoElectronico, setcorreoElectronico] = useState()
     const [password, setpassword] = useState()
     const [rolUsuario, setrolUsuario] = useState()
+    const [idBase, setidBase] = useState()
     ////////////
    
     
@@ -46,67 +39,136 @@ axios.request(options).then(function (response) {
 });      
     }, [])
 
-   
+    const actualizarBaseDatos = async () => {
+      const options = {
+        method: 'PATCH',
+        url: 'http://localhost:5000/usuarios/edita',
+        headers: {'Content-Type': 'application/json'},
+        data: {
+          id: idBase,
+          nombreUsuario: nombreUsuario,
+          numerodeIdentificacion: numerodeIdentificacion,
+          correoElectronico: correoElectronico,
+          password: password,
+          rolUsuario: rolUsuario
+        }
+      };
+      
+      await axios.
+      request(options).then(function (response) {
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+      window.location.reload()
+    }
 
+    const borrarBaseDatos = async () => {
+  
+  const options = {
+    method: 'DELETE',
+    url: 'http://localhost:5000/usuarios/borra',
+    headers: {'Content-Type': 'application/json'},
+    data: {id: idBase}
+  };
+  
+  await axios.
+  request(options).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+  window.location.reload()
+    
+    }
 
-
-    return(
-        <div class="algo">
-
-        <span>  <font color="white">Esta en pagina 3 Gestion de roles</font> </span>
-        <Link to="index"> pagina inicial </Link>
-
-<table class="Marco">
-<tbody>
-<tr>
-<td>
-<Cabecera cabeza="MODULO DE GESTION DE ROLES"/><br/><br/>
-
-
-
-
+  
+  return (
+    <div class="algo">
+      <ul>
+        <div className="navbar3">
+          <li className="pizza_item1">
+            <i className="fas fa-pizza-slice"></i>
+            <a className="pizza_link1" href="Index">Página Principal</a>
+            {/* <Link to="index"> pagina inicial </Link>  recordar usar link para saltar cargas*/} 
+          </li>
+          <li className="pizza_item1">
+            <i className="fas fa-pizza-slice"></i>
+            <a className="pizza_link" href="Page4">Módulo de Ventas</a>
+          </li>
+          <li className="pizza_item1">
+            <i className="fas fa-pizza-slice"></i>
+            <a className="pizza_link" href="Page5">Estado de Ventas</a>
+          </li>
+          <li className="pizza_item1">
+            <i className="fas fa-pizza-slice"></i>
+            <a className="pizza_link" href="Page6">Inventario</a>
+          </li>
+        </div>
+      </ul>
+      <table class="Marco">
+        <tbody>
+          <tr>
+            <td>
+              <Cabecera cabeza="MODULO DE GESTION DE ROLES" /><br /><br />
+             
           <table class="FILA">
 
-          < thead>
-            <tr>
-              <th>Nombre de Usuario</th>
-              <th>Numero de identificacion</th>
-              <th>Correo Electronico</th>
-              <th>password</th>
-              <th>Rol Usuario</th>
-              <th>Editar</th>
-              <th>Borrar</th>
-            </tr>
-          </thead>
+< thead>
+  <tr>
+    <th>Nombre de Usuario</th>
+    <th>Numero de identificacion</th>
+    <th>Correo Electronico</th>
+    <th>password</th>
+    <th>Rol Usuario</th>
+    <th>Editar</th>
+    <th>Borrar</th>
+  </tr>
+</thead>
 
 {Usuarios.map((x, index) => {
-    return( 
-         
-        <tbody>
+return( 
 
+<tbody>
+{x.rolUsuario != "pendiente" ?
         <tr key={index}>
-        <td> {x.nombreUsuario} </td> 
-        <td> {x.numerodeIdentificacion} </td>
+        <td> {x.nombreUsuario}</td> 
+        <td> {x.numerodeIdentificacion} {x._id} </td>
         <td> {x.correoElectronico} </td> 
         <td> {x.password} </td>  
-        <td> <input type="text" value={x.rolUsuario} />
-{/*           <select name="select">
-            <option value="value1">Administrador</option>
-            <option value="value2"selected>Vendedor</option>
-            
-          </select> */}
-          </td>
+        <td> { <input  type="text" value={rolUsuario} placeholder={x.rolUsuario} onChange={(e) => { 
+          setidBase(x._id)
+          setrolUsuario(e.target.value)
+          setnombreUsuario(x.nombreUsuario)
+          setnumerodeIdentificacion(x.numerodeIdentificacion)
+          setcorreoElectronico(x.correoElectronico)
+          setpassword(x.password)  
+        }} /> }  </td>
 
-<td><input type="submit" value="editar" class="button" /></td>
-<td><input type="submit" value="eliminar" class="button" /></td>
+<td> 
+  <input type="button" value="📑 Editar"    class="button"   onClick={ (e) => {
+     console.log("se va enviar a este ID --> " ,idBase,nombreUsuario,numerodeIdentificacion,correoElectronico,password,rolUsuario)
+     actualizarBaseDatos() 
+;}}  /></td>
+<td><input type="button" value="❌ Eliminar" class="button" onClick={ (e) => {
+console.log("se va boorar esto --> " ,idBase,nombreUsuario,numerodeIdentificacion,correoElectronico,password,rolUsuario)
+borrarBaseDatos();
+}
+} 
+
+/></td>
 </tr>
+:<tbody></tbody>} 
+
+
 </tbody>
 
-    
-    )
+
+)
 
 
-})}
+}
+)}
 
 </table>
 
@@ -135,39 +197,53 @@ axios.request(options).then(function (response) {
 <table class="FILA">
 
 < thead>
-            <tr>
-              <th>Nombre de Usuario</th>
-              <th>Numero de identificacion</th>
-              <th>Correo Electronico</th>
-              <th>password</th>
-              <th>Rol Usuario</th>
-              <th>Aceptar Petición</th>
+  <tr>
+    <th>Nombre de Usuario</th>
+    <th>Numero de identificacion</th>
+    <th>Correo Electronico</th>
+    <th>password</th>
+    <th>Rol Usuario</th>
+    <th>Aceptar Petición</th>
 
-            </tr>
-  </thead>
+  </tr>
+</thead>
 
-{Usuarios.map((x, index) => {
+{Usuarios.map((x, index2) => {
 return( 
 
-<tbody>
 
-<tr key={index}>
+<tbody>
+{x.rolUsuario == "pendiente" ? 
+<tr key={index2}>
 <td> {x.nombreUsuario} </td> 
 <td> {x.numerodeIdentificacion} </td>
 <td> {x.correoElectronico} </td> 
 <td> {x.password} </td>   
 <td>
-<select name="select">
-  <option value="value1">Administrador</option>
-  <option value="value2">Vendedor</option>
-  <option value="value3"selected>Pendiente</option>
-</select>
+<input type="text" value={rolUsuario} placeholder={x.rolUsuario} onChange={(e) => { setrolUsuario(e.target.value) 
+                       setidBase(x._id)
+                       setnombreUsuario(x.nombreUsuario)
+                       setnumerodeIdentificacion(x.numerodeIdentificacion)
+                       setcorreoElectronico(x.correoElectronico)
+                       setpassword(x.password)
+                       
+        }}/>
 </td>
+<td><input type="submit" value="✔️ Aceptar" class="button" onClick={ (e) => {
 
-<td><input type="submit" value="Aceptar" class="button" /></td>
+actualizarBaseDatos()
 
+console.log("se va enviar a este ID --> " ,idBase,nombreUsuario,numerodeIdentificacion,correoElectronico,password,rolUsuario)
+
+
+;}}  /></td>
 </tr>
+
+:<tbody></tbody>} 
 </tbody>
+
+
+
 
 
 )
@@ -187,8 +263,8 @@ return(
 
 
 
-        </div>
-    )
+</div>
+)
 }
 
 export default Page3;

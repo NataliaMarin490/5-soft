@@ -18,7 +18,6 @@ function Page2() {
     /* console.log(`enviado back , ${nombreUsuario}, ${numerodeIdentificacion}, ${correoElectronico} , ${password}`)
     setUsuarios([...Usuarios, { nombreUsuario: nombreUsuario, numerodeIdentificacion: numerodeIdentificacion, correoElectronico: correoElectronico, password: password }]);
  */
-
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/usuarios/nuevo',
@@ -32,7 +31,6 @@ function Page2() {
       }
     };
     
-    
     await axios
     .request(options).then(function (response) {
       console.log(response.data);
@@ -42,8 +40,6 @@ function Page2() {
     
 
   }
-  
-  
   return ( 
     <div>
       <ul>

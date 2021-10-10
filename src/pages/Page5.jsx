@@ -4,8 +4,26 @@ import "../styles/modulo_Estado_Venta.css"
 function Page5() {
     return (
         <div>
-            <span>Esta en estado venta, pagina 5</span>
-            <Link to="index"> pagina inicial </Link>
+            <ul>
+                <div className="navbar4">
+                    <li className="pizza_item1">
+                        <i className="fas fa-pizza-slice"></i>
+                        <a className="pizza_link1" href="Index">Página Principal</a>
+                    </li>
+                    <li className="pizza_item1">
+                        <i className="fas fa-pizza-slice"></i>
+                        <a className="pizza_link" href="Page3">Gestión de Roles</a>
+                    </li>
+                    <li className="pizza_item1">
+                        <i className="fas fa-pizza-slice"></i>
+                        <a className="pizza_link" href="Page4">Módulo de ventas</a>
+                    </li>
+                    <li className="pizza_item1">
+                        <i className="fas fa-pizza-slice"></i>
+                        <a className="pizza_link" href="Page6">Inventario</a>
+                    </li>
+                </div>
+            </ul>
             <body>
                 <div className="container">
                     <h1 className="text-center">Pedido #4242424123</h1>
@@ -34,8 +52,6 @@ function Page5() {
                         <button id="finishBtn" >Finalizar</button>
                     </div>
                 </div>
-
-
                 <div className="container">
                     <h1 className="text-center">Pedido #3686578</h1>
                     <div id="stepProgressBar">
@@ -63,13 +79,7 @@ function Page5() {
                         <button id="finishBtn" >Finalizar</button>
                     </div>
                 </div>
-
-
-
-
             </body>
-
-
         </div>
     )
 }
