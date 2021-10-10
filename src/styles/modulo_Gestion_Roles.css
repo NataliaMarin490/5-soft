@@ -7,18 +7,27 @@
   
 
   }*/
-
   div.algo {  
-    background-image:url("../media/fondoRoles.png");
+    background-image:url("../media/pizza2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
-    
-
- 
   }
+  .navbar3{ 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3vh;
+    font-weight: 400;
+    background-color:  #b5040a;
 
-
+  }
   .button{
     text-decoration:none; 
     text-align:center; 
@@ -26,16 +35,12 @@
     -webkit-border-radius:18px;
     -moz-border-radius:18px; 
     border-radius: 18px; 
-    font:11px Arial, Helvetica, sans-serif; 
-    font-weight:bold; 
+    font:2vh  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-weight:600; 
     color:#ffffff; 
-    background:#8ba83c; 
-    -webkit-box-shadow:0px 0px 8px #bababa, inset 0px 0px 1px #ffffff; 
-    -moz-box-shadow: 0px 0px 8px #bababa,  inset 0px 0px 1px #ffffff;  
-    box-shadow:0px 0px 8px #bababa, inset 0px 0px 1px #ffffff;  
-     
-     }
-
+    background:#b5040a; 
+ 
+    }
 
      table.Marco {
       margin: auto;
@@ -51,7 +56,7 @@
       background-blend-mode:saturation;
     }
     table.Marco td, table.Marco th {
-      border: 4px solid #FFFFFF;
+      border: 0.5vh solid #ffffff;
       padding: 0px 0px;
     }
     table.Marco tbody td {
@@ -75,7 +80,7 @@
     }
 
     table.FILA td, table.FILA th {
-      border: 1px solid white;
+      border: 1px solid #ffffff;
       padding: 6px 2px;
     }
     table.FILA tbody td {

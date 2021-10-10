@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import "../styles/modulo_Loggin.css"
-import Pizza from "../media/Pizza.png"
+import Google from '../media/google_logo.png';
 import Login from "../media/Login.png"
 
-function Page1() { 
+function Page1() {
   return (
     <div>
       <ul>
@@ -24,7 +24,7 @@ function Page1() {
             <form action="#" class="login-form">
               <div class="input-group">
                 <label class="input-fill">
-                  <input type="email"  pattern=".+@gmail.com" title="Por favor, ingresar una dirección de correo de Gmail" name="email" id="email" required />
+                  <input type="email" pattern=".+@gmail.com" title="Por favor, ingresar una dirección de correo de Gmail" name="email" id="email" required />
                   <span class="input-label">Correo Electrónico</span>
                   <i class="fas fa-envelope"></i>
                 </label>
@@ -39,6 +39,12 @@ function Page1() {
               <a href="Page2" target="_blank">¿Necesitas una Cuenta? </a>
               <input type="submit" value="Iniciar Sesión" class="btn-login" />
             </form>
+            <button className="google_btn" type="submit">
+              <div className='google1'>
+                <img src={Google} alt='Logo Google' className='logo_google' />
+                <span className='textGoogle'>Continúa con Google</span>
+              </div>
+            </button>
           </div>
         </div>
       </main>

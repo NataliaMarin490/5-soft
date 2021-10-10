@@ -16,6 +16,18 @@ margin-bottom:  10px;
 color:  #28a745;
 }
 
+.navbar4{ 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3vh;
+    font-weight: 400;
+    background-color:  #b5040a;
+
+  }
 
 .bullet {
 	border: 1px solid #28a745;
