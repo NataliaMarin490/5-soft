@@ -23,7 +23,7 @@ function Page6() {
 
   const [Productos, setProductos] = useState([])
   const [Id, setId] = useState();
-  const [Descripcion, setDescripcion] = useState("");
+  const [Descripcion, setDescripcion] = useState();
   const [Precio, setprecio] = useState();
   const [Cantidad, setcantidad] = useState();
   const [Busqueda, setBusqueda] = useState("");
