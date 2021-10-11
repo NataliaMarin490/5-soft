@@ -11,14 +11,11 @@ import axios from "axios";
 
 
 function Page4() {
-    const fecha = Date()
-    let dato=0
-    const [Inventario, setInventario] = useState([])
-    const [Venta, setVenta] = useState([0])
-    
+
+    const [Inventario, setInventario] = useState()
+
 
     useEffect(() => {
-        
         const options = {method: 'GET', url: 'http://localhost:5000/productos'};
          axios.request(options).then(function (response) {
           console.log(response.data);
@@ -26,20 +23,23 @@ function Page4() {
         }).catch(function (error) {
           console.error(error);
         });      
-            }, [])
+            }, [Inventario])
+
+
+
+
+
  
+
     const venta = [
         { nombre: "Slim Pizza", precio: 20000 },
-        { nombre: "Classic Pizza", precio: 30000 },
-        { nombre: "Classic Pizza2", precio: 30000 },
-  
+        { nombre: "Classic Pizza", precio: 30000 }
     ];
 
-    
+    const fecha = Date()
     return (
         <div>
-
-<ul>
+            <ul>
                 <div className="navbar4">
                     <li className="pizza_item1">
                         <i className="fas fa-pizza-slice"></i>
@@ -59,26 +59,22 @@ function Page4() {
                     </li>
                 </div>
             </ul>
-      
-      
 
-                <div className="pagina" >
-
- 
-
+            <div className="pagina" >
                 <div className="div1">
 
+                 
+                 
 
-                
                 {Inventario.map((x , index) => {
               return (
                 <tr key={index}>
                   <td>  {x._id}  
                   
                   <div class="container1"> <img src="https://i.imgur.com/Ficfe51.png" alt=""  />  
- <button class="btn"  onClick={(e) => {
-                                    setVenta([...Venta, {productos: x.descripcionProducto , prexio:x.valorProducto}]);
-                                }}
+ <button class="btn" 
+                  onClick={(e) => {
+                                    console.log("click")}}
   >🛒 Agregar  <br/>
   💲<strong>{x.valorProducto}</strong> !! 🤑<br/> 
   🍕{x.descripcionProducto}
@@ -92,65 +88,51 @@ function Page4() {
 
 
 
+
+
                 </div>
-                
+
                 <div className="rotated">
                     <img src="https://i.imgur.com/0om2LLs.png" alt="" />
                 </div>
 
                 <div className="div2">
-
-                <form className="FORMULARIO">
-                        <h2>PEDIDO N xxx</h2>
+                    <h2>CARRITO DE COMPRAS</h2>
+                    <hr />
+                    <form className="FORMULARIO">
+                        <h2>PEDIDO #123</h2>
                         <strong>IDENTIFICADOR</strong>: 1245789 <br />
                         <strong>DESCRIPCION:</strong> Compra Fisica<br />
                         <strong>FECHA VENTA:</strong> {fecha}  <br />
                         <hr />
-                        <strong>NOMBRE CLIENTE:</strong> aqui debe ir usuario logeado<br />
-                        <strong>ID CLIENTE:</strong> el id del usuario en BD<br />
+                        <strong>NOMBRE CLIENTE:</strong> Armando Puentes<br />
+                        <strong>ID CLIENTE:</strong>6546546465<br />
                         <hr />
                         <strong>🍕 LISTA DE PRODUCTOS</strong>
-                       
-
-
-                        {Venta.map((x , index) => {
-              return (
-                <tr key={index}> 
-                  <td>{x.productos}</td>
-                  <td> { console.log("carrito ", Venta)} </td>
-                </tr>
-
-                
-              );
-            })}
-
-{Venta.reduce((a,b) => { 
-    {dato = dato + parseInt(b.prexio)} 
-                            return (<div>
-
-                                <strong>VALOR TOTAL 💰= </strong>
-                                {dato}
-                                <hr />
-                               
-                                
+                        {venta.map(item => {
+                            return (<div> {item.nombre}
+                                <select name="select">
+                                    <option value="value1" selected>1</option>
+                                    <option value="value2" >2</option>
+                                    <option value="value3">3</option>
+                                </select>
+                                💲 VALOR {item.precio}
                             </div>)
                         })}
-
-                        <br /><br />
-    
+                        <br /><br /><br />
+                        {venta.reduce((x, y) => {
+                            return (<div>
+                                <strong>VALOR TOTAL 💰= </strong>
+                                {x.precio + y.precio}
+                                <hr />
+                            </div>)
+                        })}
+                        <br />
                         <input className="submit1" type="submit" value="Confirmar Compra" />
                     </form>
 
 
-
-
-
-
-                
-                
                 </div>
-               
-                
             </div>
         </div>
     )

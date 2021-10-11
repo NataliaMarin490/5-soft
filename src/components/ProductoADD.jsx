@@ -1,12 +1,6 @@
 
 
 
-
-
-
-
-
-
 function ProductoADD(props) {
 
   return (
@@ -24,7 +18,8 @@ function ProductoADD(props) {
 <img src={props.LaURL} alt=""  /> 
 
   
-  <button class="btn" >🛒 Agregar  <br/>
+  <button class="btn" onClick={(e) => {
+  }} >🛒 Agregar  <br/>
   💲<strong>{props.ElPRECIO}</strong> !! 🤑<br/> 
   🍕{props.ElNOMBRE}
    </button>
