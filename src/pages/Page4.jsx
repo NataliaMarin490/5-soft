@@ -14,7 +14,7 @@ function Page4() {
     const fecha = Date()
     let dato=0
     const [Inventario, setInventario] = useState([])
-    const [Venta, setVenta] = useState([0])
+    const [Venta, setVenta] = useState(["inventario"])
     
 
     useEffect(() => {
@@ -26,15 +26,67 @@ function Page4() {
         }).catch(function (error) {
           console.error(error);
         });      
-            }, [])
+            }, [Venta])
  
-    const venta = [
-        { nombre: "Slim Pizza", precio: 20000 },
-        { nombre: "Classic Pizza", precio: 30000 },
-        { nombre: "Classic Pizza2", precio: 30000 },
-  
-    ];
 
+
+
+            const CreaVenta = async () => {
+
+                const options = {
+                    method: 'POST',
+                    url: 'http://localhost:5000/ventas/nuevo',
+                    headers: {'Content-Type': 'application/json'},
+                    data: {
+                      idVendedor: 5,
+                      descripcionVenta: Venta,
+                      valorVenta: dato,
+                      estadoVenta: 'iniciada'
+                    }
+                  };
+                  
+                  axios.request(options).then(function (response) {
+                    console.log(response.data);
+                  }).catch(function (error) {
+                    console.error(error);
+                  });
+            
+              
+              }
+
+
+
+              const actualizarBaseDatos = async () => {
+               
+
+                for (var i = 1; (Venta.length)>i; i++) {
+                    
+
+                    console.log("gñap", Venta[i].idbase , Venta[i].enStock)
+                    const options = {
+                        method: 'PATCH',
+                        url: 'http://localhost:5000/productos/edita',
+                        headers: {'Content-Type': 'application/json'},
+                        data: {id: Venta[i].idbase,         
+                          inventarioProducto: Venta[i].enStock - 1}
+                      };
+                      
+                       axios.
+                      request(options).then(function (response) {
+                        console.log(response.data);
+                      }).catch(function (error) {
+                        console.error(error);
+                      });
+
+             
+
+                 }
+
+              
+            
+
+            
+              }
     
     return (
         <div>
@@ -77,7 +129,7 @@ function Page4() {
                   
                   <div class="container1"> <img src="https://i.imgur.com/Ficfe51.png" alt=""  />  
  <button class="btn"  onClick={(e) => {
-                                    setVenta([...Venta, {productos: x.descripcionProducto , prexio:x.valorProducto}]);
+                                    setVenta([...Venta, {productos: x.descripcionProducto , prexio:x.valorProducto , idbase:x._id , enStock:x.inventarioProducto}]);
                                 }}
   >🛒 Agregar  <br/>
   💲<strong>{x.valorProducto}</strong> !! 🤑<br/> 
@@ -110,14 +162,14 @@ function Page4() {
                         <strong>ID CLIENTE:</strong> el id del usuario en BD<br />
                         <hr />
                         <strong>🍕 LISTA DE PRODUCTOS</strong>
-                       
 
 
+                        <strong className="strong2">
                         {Venta.map((x , index) => {
               return (
                 <tr key={index}> 
-                  <td>{x.productos}</td>
-                  <td> { console.log("carrito ", Venta)} </td>
+                  <td>{x.productos }  </td>
+                 
                 </tr>
 
                 
@@ -137,8 +189,15 @@ function Page4() {
                         })}
 
                         <br /><br />
+
+                        </strong>
+                       
+
+
+                        
     
-                        <input className="submit1" type="submit" value="Confirmar Compra" />
+                        <input className="submit1" type="button" value="Confirmar Compra💲" onClick={(e) => {
+          CreaVenta();actualizarBaseDatos();}} />
                     </form>
 
 
