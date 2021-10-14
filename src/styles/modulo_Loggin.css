@@ -52,11 +52,12 @@ body {
   }
   
   .login-data {
-    background-color: whitesmoke;
+    background-color:rgba(255,255,255,0.8);
     text-align: center;
-    border:whitesmoke 1vh solid;
+    border:1px solid #888;
     border-radius: 10vh;
     width: 60%;
+    padding: 20px;
   }
   
   .login-data h1 {
@@ -162,14 +163,15 @@ body {
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    border-width: 1px ;
+    border: 1px solid #b5040a;
+    border-width: 2px ;
     border-radius: 10vh;
-    border-color: transparent;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(55, 65, 81);
+    color: #b5040a;
     background-color: whitesmoke;
     margin-top: 3vh;
+    
   }
 
   .google_btn:hover{
@@ -184,7 +186,8 @@ body {
   .logo_google{
     height: 4vh;
     width: 4vh;
-    margin-right: 2vh;
+    margin-bottom: -6px;
+    margin-right: 0vh;
   }
 
   .textGoogle{

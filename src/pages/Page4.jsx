@@ -26,8 +26,10 @@ function Page4() {
         }).catch(function (error) {
           console.error(error);
         });      
-            }, [Venta])
- 
+            }, [setVenta])
+
+
+      
 
 
 
@@ -45,7 +47,7 @@ function Page4() {
                     }
                   };
                   
-                  axios.request(options).then(function (response) {
+                  await axios.request(options).then(function (response) {
                     console.log(response.data);
                   }).catch(function (error) {
                     console.error(error);
@@ -55,37 +57,29 @@ function Page4() {
               }
 
 
-
               const actualizarBaseDatos = async () => {
                
-
                 for (var i = 1; (Venta.length)>i; i++) {
                     
-
-                    console.log("gñap", Venta[i].idbase , Venta[i].enStock)
+                   
+                    console.log("tamaño es ", Venta.length, Venta[i].idbase , Venta[i].enStock)
                     const options = {
                         method: 'PATCH',
                         url: 'http://localhost:5000/productos/edita',
                         headers: {'Content-Type': 'application/json'},
                         data: {id: Venta[i].idbase,         
-                          inventarioProducto: Venta[i].enStock - 1}
+                          inventarioProducto: Venta[i].enStock - i}
                       };
                       
-                       axios.
+                      await axios.
                       request(options).then(function (response) {
                         console.log(response.data);
                       }).catch(function (error) {
                         console.error(error);
                       });
 
-             
-
                  }
 
-              
-            
-
-            
               }
     
     return (

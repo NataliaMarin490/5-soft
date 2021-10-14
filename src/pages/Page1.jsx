@@ -2,8 +2,15 @@ import { Link } from 'react-router-dom';
 import "../styles/modulo_Loggin.css"
 import Google from '../media/google_logo.png';
 import Login from "../media/Login.png"
+import GoogleLogin from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 
 function Page1() {
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
+
   return (
     <div>
       <ul>
@@ -39,12 +46,23 @@ function Page1() {
               <a href="Page2" target="_blank">¿Necesitas una Cuenta? </a>
               <input type="submit" value="Iniciar Sesión" class="btn-login" />
             </form>
-            <button className="google_btn" type="submit">
+            
               <div className='google1'>
-                <img src={Google} alt='Logo Google' className='logo_google' />
-                <span className='textGoogle'>Continúa con Google</span>
+                
+                <GoogleLogin
+    clientId="FALTA GENERAR LA ID"
+    render={renderProps => (
+      <button  className="google_btn" onClick={renderProps.onClick} disabled={renderProps.disabled}><span className='textGoogle'>Continúa con <img src={Google} alt='Logo Google' className='logo_google' />oogle</span></button>
+    )}
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
+                
               </div>
-            </button>
+            
+            
           </div>
         </div>
       </main>
