@@ -3,8 +3,6 @@ import "../styles/modulo_Registro.css"
 import react, { useEffect, useState } from 'react'
 import axios from "axios";
 
-
-
 function Page2() {
   
   /* const [Usuarios, setUsuarios] = useState() */

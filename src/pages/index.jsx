@@ -1,17 +1,12 @@
 import { Link } from 'react-router-dom';
 import "../styles/Intro.css"
-import react, { useState,useEffect } from 'react'
+import react, { useState, useEffect } from 'react'
 import GoogleLogin from 'react-google-login';
 
-
-
-
 function Index() {
-
-  
     return (
         <div>
-            <body className="body12">
+            <main className="body12">
                 <nav className="navbar">
                     <div className="logo">
                         <a className="logo_text" href="#">
@@ -81,7 +76,7 @@ function Index() {
                         Todos los derechos reservados.
                     </span>
                 </footer>
-            </body>
+            </main>
         </div>
     )
 }

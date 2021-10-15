@@ -14,9 +14,6 @@ function Page3() {
     const [rolUsuario, setrolUsuario] = useState()
     const [idBase, setidBase] = useState()
   
-   
-    
-
     useEffect(() => {
 const options = {method: 'GET', url: 'http://localhost:5000/usuarios'};
 axios.request(options).then(function (response) {
