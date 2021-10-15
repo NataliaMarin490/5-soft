@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import "../styles/Intro.css"
+import react, { useState,useEffect } from 'react'
+import GoogleLogin from 'react-google-login';
+
+
+
 
 function Index() {
+
+  
     return (
         <div>
             <body className="body12">

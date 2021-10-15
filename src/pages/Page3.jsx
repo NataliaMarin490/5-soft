@@ -124,7 +124,7 @@ return(
         <td> {x.nombreUsuario}</td> 
         <td> {x.numerodeIdentificacion} {x._id} </td>
         <td> {x.correoElectronico} </td> 
-        <td> {x.password} </td>  
+        <td> <img src={x.password}alt=""/> </td>  
         <td> { <input  type="text" value={rolUsuario} placeholder={x.rolUsuario} onChange={(e) => { 
           setidBase(x._id)
           setrolUsuario(e.target.value)
@@ -207,7 +207,7 @@ return(
 <td> {x.nombreUsuario} </td> 
 <td> {x.numerodeIdentificacion} </td>
 <td> {x.correoElectronico} </td> 
-<td> {x.password} </td>   
+<td> <img src={x.password}alt=""></img> </td>   
 <td>
 <input type="text" value={rolUsuario} placeholder={x.rolUsuario} onChange={(e) => { setrolUsuario(e.target.value) 
                        setidBase(x._id)
