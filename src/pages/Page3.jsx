@@ -105,7 +105,7 @@ axios.request(options).then(function (response) {
     <th>Nombre de Usuario</th>
     <th>Numero de identificacion</th>
     <th>Correo Electronico</th>
-    <th>password</th>
+    <th>Foto URL</th>
     <th>Rol Usuario</th>
     <th>Editar</th>
     <th>Borrar</th>
@@ -187,7 +187,7 @@ borrarBaseDatos();
     <th>Nombre de Usuario</th>
     <th>Numero de identificacion</th>
     <th>Correo Electronico</th>
-    <th>password</th>
+    <th>Foto URL</th>
     <th>Rol Usuario</th>
     <th>Aceptar Petición</th>
 

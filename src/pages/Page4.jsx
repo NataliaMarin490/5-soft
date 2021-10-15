@@ -36,7 +36,7 @@ function Page4() {
         idVendedor: 5,
         descripcionVenta: Venta,
         valorVenta: dato,
-        estadoVenta: 'iniciada'
+        estadoVenta: 1
       }
     };
 
