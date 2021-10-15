@@ -5,11 +5,7 @@ import "../styles/modulo_Inventarios.css"
 import react, { useEffect, useState } from 'react'
 import axios from "axios";
 
-
-
 function Page6() {
-
-
   const BaseFake =
     [
       { idProducto: 1, descripcionProducto: "Slim Pizza", valorProducto: 20000, inventarioProducto: 10 },
@@ -17,9 +13,7 @@ function Page6() {
       { idProducto: 3, descripcionProducto: "Classic Pizza", valorProducto: 30000, inventarioProducto: 10 },
       { idProducto: 4, descripcionProducto: "Mega Pizza", valorProducto: 50000, inventarioProducto: 10 },
       { idProducto: 5, descripcionProducto: "Nerd Pizza", valorProducto: 60000, inventarioProducto: 10 },
-
     ]
-
 
   const [Productos, setProductos] = useState([])
   const [Id, setId] = useState();
@@ -30,42 +24,32 @@ function Page6() {
   const [FiltroProductos, setFiltroProductos] = useState(Productos);
   const [IdBase, setIdBase] = useState()
 
-
   useEffect(() => {
     //Aqui voy a jalar info de la base datos
-
-const options = {method: 'GET', url: 'http://localhost:5000/productos'};
-
-axios.request(options).then(function (response) {
-  console.log(response.data);
-  setProductos(response.data)
-}).catch(function (error) {
-  console.error(error);
-});
-
-    
-
+    const options = { method: 'GET', url: 'http://localhost:5000/productos' };
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+      setProductos(response.data)
+    }).catch(function (error) {
+      console.error(error);
+    });
   }, []);
 
   const borrarBaseDatos = async () => {
     console.log(`esto es lo que va borrar , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
+    const options = {
+      method: 'DELETE',
+      url: 'http://localhost:5000/productos/borra',
+      headers: { 'Content-Type': 'application/json' },
+      data: { id: IdBase }
+    };
 
-
-const options = {
-  method: 'DELETE',
-  url: 'http://localhost:5000/productos/borra',
-  headers: {'Content-Type': 'application/json'},
-  data: {id: IdBase}
-};
-
-await axios.
-request(options).then(function (response) {
-  console.log(response.data);
-}).catch(function (error) {
-  console.error(error);
-});
-
-  
+    await axios.
+      request(options).then(function (response) {
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
   }
 
   const actualizarBaseDatos = async () => {
@@ -74,33 +58,31 @@ request(options).then(function (response) {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/productos/edita',
-      headers: {'Content-Type': 'application/json'},
-      data: {id: IdBase,         
+      headers: { 'Content-Type': 'application/json' },
+      data: {
+        id: IdBase,
         idProducto: Id,
         descripcionProducto: Descripcion,
         valorProducto: Precio,
-        inventarioProducto: Cantidad}
+        inventarioProducto: Cantidad
+      }
     };
-    
+
     await axios.
-    request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-
+      request(options).then(function (response) {
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
   }
-
 
   const enviarBaseDatos = async () => {
     console.log(`enviado back , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
     setProductos([...Productos, { idProducto: Id, descripcionProducto: Descripcion, valorProducto: Precio, inventarioProducto: Cantidad }]);
-
-
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/productos/nuevo',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       data: {
         idProducto: Id,
         descripcionProducto: Descripcion,
@@ -108,42 +90,28 @@ request(options).then(function (response) {
         inventarioProducto: Cantidad
       }
     };
-    
-    
     await axios
-    .request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-    
-
+      .request(options).then(function (response) {
+        console.log(response.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
   }
 
   useEffect(() => {
     console.log("busqueda", Busqueda);
 
     setFiltroProductos(
-
       Productos.filter((x) => {
         return JSON.stringify(x).toLocaleLowerCase().includes(Busqueda.toLocaleLowerCase());
       })
-
     )
-
-
   }, [Busqueda, Productos]);
 
-
-
   const Mytabladeproductos = ({ ListaProductos }) => {
-
-
     useEffect(() => {
       console.log(ListaProductos);
-
     }, [ListaProductos]);
-
     return (
       <div>
         <table class="TablaInventario">
@@ -158,7 +126,7 @@ request(options).then(function (response) {
             </tr>
           </thead>
           <tbody>
-            {ListaProductos.map((x , index) => {
+            {ListaProductos.map((x, index) => {
               return (
                 <tr key={index}>
                   <td>{x.idProducto}</td>
@@ -203,12 +171,14 @@ request(options).then(function (response) {
           enviarBaseDatos(); console.log(" | La variable Id = ", Id + " | La variable Descripcion = ", Descripcion + " | La variable precio= ",
             Precio + " | El search es = ", Busqueda)
         }} value="Guardar ☁️" />
-        <input type="button" value="Borrar ❌"  onClick={(e) => {
-          borrarBaseDatos();}}></input>
-        <input type="button" value="Actualizar 🔄"  onClick={(e) => {
-          actualizarBaseDatos();}}></input>
-        <input type="text"  onChange={(e) => { setIdBase(e.target.value) }} placeholder=" # ID Base Datos" />
-        
+        <input type="button" value="Borrar ❌" onClick={(e) => {
+          borrarBaseDatos();
+        }}></input>
+        <input type="button" value="Actualizar 🔄" onClick={(e) => {
+          actualizarBaseDatos();
+        }}></input>
+        <input type="text" onChange={(e) => { setIdBase(e.target.value) }} placeholder=" # ID Base Datos" />
+
       </form>
 
 

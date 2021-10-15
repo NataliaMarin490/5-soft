@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import React from 'react'
 import "../styles/modulo_Estado_Venta.css"
 
-function Page5() {
+const Page5 = () => {
     return (
         <div>
             <ul>
@@ -24,64 +24,47 @@ function Page5() {
                     </li>
                 </div>
             </ul>
-            <body>
-                <div className="container">
-                    <h1 className="text-center">Pedido #4242424123</h1>
-                    <div id="stepProgressBar">
-                        <div className="step">
-                            <p className="step-text">Confirmación</p>
-                            <div className="bullet">1</div>
+            <main className="cuerpo">
+                <div>
+                    <div className="container">
+                        <h1 className="text-center1">Pedido #4242424123</h1>
+                        <div id="stepProgressBar">
+                            <div className="step">
+                                <p className="step-text">Confirmación</p>
+                                <div className="bullet" >
+                                    <div className="bullet-n"> 1</div>
+                                </div>
+                            </div>
+                            <div className="step">
+                                <p className="step-text">Preparación</p>
+                                <div className="bullet">
+                                    <div className="bullet-n"> 2</div></div>
+                            </div>
+                            <div className="step">
+                                <p className="step-text">Entregado</p>
+                                <div className="bullet">
+                                    <div className="bullet-n"> 3</div>
+                                </div>
+                            </div>
+                            <div className="step">
+                                <p className="step-text">Finalizado</p>
+                                <div className="bullet ">
+                                    <div className="bullet-n"> 4</div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="step">
-                            <p className="step-text">Preparación</p>
-                            <div className="bullet">2</div>
+                        <div id="main">
+                            <p id="content" className="text-center">Ingresar pedido</p>
+                            <button className="boton" id="previousBtn" >Anterior</button>
+                            <button className="boton" id="nextBtn">Siguiente</button>
+                            <button className="boton" id="finishBtn" >Finalizar</button>
                         </div>
-                        <div className="step">
-                            <p className="step-text">Entregado</p>
-                            <div className="bullet">3</div>
-                        </div>
-                        <div className="step">
-                            <p className="step-text">Finalizado</p>
-                            <div className="bullet ">4</div>
-                        </div>
-                    </div>
-                    <div id="main">
-                        <p id="content" className="text-center">Ingresar pedido</p>
-                        <button id="previousBtn" >Anterior</button>
-                        <button id="nextBtn">Siguiente</button>
-                        <button id="finishBtn" >Finalizar</button>
                     </div>
                 </div>
-                <div className="container">
-                    <h1 className="text-center">Pedido #3686578</h1>
-                    <div id="stepProgressBar">
-                        <div className="step">
-                            <p className="step-text">Confirmación</p>
-                            <div className="bullet">1</div>
-                        </div>
-                        <div className="step">
-                            <p className="step-text">Preparación</p>
-                            <div className="bullet">2</div>
-                        </div>
-                        <div className="step">
-                            <p className="step-text">Entregado</p>
-                            <div className="bullet">3</div>
-                        </div>
-                        <div className="step">
-                            <p className="step-text">Finalizado</p>
-                            <div className="bullet ">4</div>
-                        </div>
-                    </div>
-                    <div id="main">
-                        <p id="content" className="text-center">Ingresar pedido</p>
-                        <button id="previousBtn" >Anterior</button>
-                        <button id="nextBtn">Siguiente</button>
-                        <button id="finishBtn" >Finalizar</button>
-                    </div>
-                </div>
-            </body>
+            </main>
         </div>
     )
 }
 
-export default Page5;
+export default Page5
+
