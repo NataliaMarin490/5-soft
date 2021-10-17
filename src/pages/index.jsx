@@ -2,8 +2,22 @@ import { Link } from 'react-router-dom';
 import "../styles/Intro.css"
 import react, { useState, useEffect } from 'react'
 import GoogleLogin from 'react-google-login';
+import cookie from 'react-cookies'
+import imgr from "./../media/imagentest.png"
 
 function Index() {
+    const [name, setname] = useState()
+    const [email, setemail] = useState()
+    const [Iurl, setIurl] = useState()
+   
+    useEffect(() => {
+        setname(cookie.load('name'))
+        setemail(cookie.load('email'))
+        setIurl(cookie.load('Iurl'))
+        
+        }, [])
+
+
     return (
         <div>
             <main className="body12">
@@ -20,6 +34,15 @@ function Index() {
                     <div className="login">
                         <Link className="login_link login_link--button" to="Page1"> Log in  </Link>
                         <Link className="login_link login_link--button1" to="Page2"> Sign up  </Link>
+                        <div className="Perfil"> 
+                            
+                            <img src={Iurl} alt="" onerror="funcion()"/>
+                            <div>{name}</div>
+                            <div>{email}</div>
+                            
+                        
+                        </div>
+                        
                     </div>
 
                     <div className="btn_pizza">

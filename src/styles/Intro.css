@@ -219,3 +219,19 @@ body.body12 {
     font-family: "Open Sans", sans-serif;
     color: #e6e6e6;
 }
+
+.Perfil img{
+    background-image:url('https://i.imgur.com/jVP9epY.png');
+    width: 62px; height: 62px;
+    border-color:#e6e6e6;
+    border-radius: 6px;
+    border-width: 3px;
+    border-style: solid;
+    
+    
+}
+
+.Perfil{
+    font-family: "Open Sans", sans-serif;
+    color: #e6e6e6;
+}

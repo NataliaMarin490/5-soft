@@ -5,6 +5,7 @@ import Login from "../media/Login.png"
 import react, { useState, useEffect } from 'react'
 import GoogleLogin from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
+import cookie from 'react-cookies'
 import axios from "axios";
 
 function Page1() {
@@ -27,7 +28,10 @@ function Page1() {
   const [rolUsuario, setrolUsuario] = useState("pendiente")
 
   const responseGoogle = (response) => {
-
+    cookie.save('token', response.tokenId);
+    cookie.save('name', response.profileObj.name);
+    cookie.save('email', response.profileObj.email);
+    cookie.save('Iurl', response.profileObj.imageUrl);
     setnombreUsuario(response.profileObj.name)
     setcorreoElectronico(response.profileObj.email)
     setnumerodeIdentificacion(response.profileObj.googleId)
