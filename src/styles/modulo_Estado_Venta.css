@@ -1,0 +1,135 @@
+body{
+    height: 100%;
+    background-color: white;
+    background-image: url("../media/pizza-page5.jpg") ;
+    background-repeat: repeat;
+    background-size:cover;
+	background-attachment: fixed;
+    background-position: center;
+
+}
+
+#stepProgressBar  {
+	display:  flex;
+	justify-content:  space-between;
+	align-items:  flex-end;
+	width:  300px;
+	margin-bottom:  40px;
+	margin-top: 3vh;
+}
+
+.step-text  {
+	margin-bottom:  10px;
+	font-weight: 800;
+	color:  #28a745;
+	font-size: 3.5vh;
+}
+
+.step{
+	text-align: center;
+	margin-left: 2vh;
+}
+
+.navbar4{ 
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 10vh;
+	width: 100%;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 3vh;
+	font-weight: 400;
+	background-color:  #b5040a;
+}
+
+.bullet {
+	border: 5px solid #28a745;
+	height: 5vh;
+	width: 5vh;
+	border-radius: 100%;
+	color: #28a745;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	transition: background-color 500ms;
+	line-height:20px;
+
+}
+
+.bullet-n{
+	padding-top: 1vh;
+	font-size: 3vh;
+	font-weight: 800;
+}
+
+.bullet.completed  {
+	color:  white;
+	background-color:  #28a745;
+}
+
+.bullet.completed::after {
+	content: '';
+	position: absolute;
+	right: -60px;
+	bottom: 10px;
+	height: 1px;
+	width: 54px;
+	background-color: #28a745;
+}
+
+/* Base styles and helper stuff */
+.hidden  {
+	display:  none;
+}
+
+button  {
+	padding:  5px  10px;
+	border:  1px  solid  black;
+	transition:  250ms background-color;
+}
+
+button:hover  {
+	cursor:  pointer;
+	background-color:  black;
+	color:  white;
+}
+
+button:disabled:hover  {
+	opacity:  0.6;
+	cursor:  not-allowed;
+}
+
+.boton{
+	margin-left: 3vh;
+	height: 5vh;
+	width: 20vh;
+	border: 2px solid rgb(87, 83, 83);
+	border-radius: 5vh;
+}
+
+.text-center  {
+	margin-top: 5vh ;
+	margin-bottom: 4vh	;
+	font-size: 4vh;
+	font-weight: 800;
+	text-align:  center;
+}
+
+.text-center1 {
+	margin-top: 5vh ;
+	margin-bottom: 4vh	;
+	font-size: 5vh;
+	font-weight: 800;
+	text-align:  center;
+}
+
+.container  {
+	background-color: whitesmoke;
+	flex-direction: column;
+	margin-top: 10%;
+	margin-left: 32.5%;
+	height: 50vh;
+	width: 80vh;
+	border: 6px groove rgb(71, 69, 69) ;
+	border-radius: 6vh;
+}
