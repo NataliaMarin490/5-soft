@@ -26,7 +26,7 @@ function Page6() {
 
   useEffect(() => {
     //Aqui voy a jalar info de la base datos
-    const options = { method: 'GET', url: 'http://localhost:5000/productos' };
+    const options = { method: 'GET', url: 'https://floating-spire-36481.herokuapp.com/productos' };
     axios.request(options).then(function (response) {
       console.log(response.data);
       setProductos(response.data)
@@ -39,7 +39,7 @@ function Page6() {
     console.log(`esto es lo que va borrar , ${Id}, ${Descripcion}, ${Precio} , ${Cantidad}`)
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/productos/borra',
+      url: 'https://floating-spire-36481.herokuapp.com/productos/borra',
       headers: { 'Content-Type': 'application/json' },
       data: { id: IdBase }
     };
@@ -57,7 +57,7 @@ function Page6() {
 
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:5000/productos/edita',
+      url: 'https://floating-spire-36481.herokuapp.com/productos/edita',
       headers: { 'Content-Type': 'application/json' },
       data: {
         id: IdBase,
@@ -81,7 +81,7 @@ function Page6() {
     setProductos([...Productos, { idProducto: Id, descripcionProducto: Descripcion, valorProducto: Precio, inventarioProducto: Cantidad }]);
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/productos/nuevo',
+      url: 'https://floating-spire-36481.herokuapp.com/productos/nuevo',
       headers: { 'Content-Type': 'application/json' },
       data: {
         idProducto: Id,

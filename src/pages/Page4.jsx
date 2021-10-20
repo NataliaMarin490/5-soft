@@ -17,7 +17,7 @@ function Page4() {
 
   useEffect(() => {
 
-    const options = { method: 'GET', url: 'http://localhost:5000/productos' };
+    const options = { method: 'GET', url: 'https://floating-spire-36481.herokuapp.com/productos' };
     axios.request(options).then(function (response) {
       console.log(response.data);
       setInventario(response.data)
@@ -30,7 +30,7 @@ function Page4() {
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/ventas/nuevo',
+      url: 'https://floating-spire-36481.herokuapp.com/ventas/nuevo',
       headers: { 'Content-Type': 'application/json' },
       data: {
         idVendedor: 5,
@@ -54,7 +54,7 @@ function Page4() {
       console.log("tamaño es ", Venta.length, Venta[i].idbase, Venta[i].enStock)
       const options = {
         method: 'PATCH',
-        url: 'http://localhost:5000/productos/edita',
+        url: 'https://floating-spire-36481.herokuapp.com/productos/edita',
         headers: { 'Content-Type': 'application/json' },
         data: {
           id: Venta[i].idbase,

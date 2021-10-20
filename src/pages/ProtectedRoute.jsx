@@ -13,6 +13,17 @@ const ProtectedRoute = ({ ...props }) => {
     const client = new OAuth2Client(CLIENT_ID);
     const [auth, setAuth] = useState(null)
 
+   
+      const algoblabla =(intime)=>{
+
+        const date = Date.now();
+        let currentDate = null;
+        do {
+          currentDate = Date.now();
+        } while (currentDate - date < intime);
+
+      }
+
     useEffect(() => {
         verify(cookie.load('token'))
     }, [auth])
@@ -55,12 +66,15 @@ const ProtectedRoute = ({ ...props }) => {
 
     return (<div>
         {console.log('auth', auth)}
+        
         {auth ?
             <Component />
             : auth === false ?
-                <Redirect to={{ pathname: '/' }} /> :
-                <div><h1>Cargando...</h1></div>
+            
+                <Redirect to={{ pathname: '/' }} /> : <img src="https://i.imgur.com/xzku5RR.png" alt="" />
+                /* <div><h1>Cargando...</h1></div> */
         }
+        {algoblabla(50)}
     </div>);
 }
 

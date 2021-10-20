@@ -18,7 +18,7 @@ function Page2() {
  */
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/usuarios/nuevo',
+      url: 'https://floating-spire-36481.herokuapp.com/usuarios/nuevo',
       headers: {'Content-Type': 'application/json'},
       data: {
         nombreUsuario: nombreUsuario,

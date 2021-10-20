@@ -15,7 +15,7 @@ function Page3() {
     const [idBase, setidBase] = useState()
   
     useEffect(() => {
-const options = {method: 'GET', url: 'http://localhost:5000/usuarios'};
+const options = {method: 'GET', url: 'https://floating-spire-36481.herokuapp.com/usuarios'};
 axios.request(options).then(function (response) {
   console.log(response.data);
   setUsuarios(response.data)
@@ -27,7 +27,7 @@ axios.request(options).then(function (response) {
     const actualizarBaseDatos = async () => {
       const options = {
         method: 'PATCH',
-        url: 'http://localhost:5000/usuarios/edita',
+        url: 'https://floating-spire-36481.herokuapp.com/usuarios/edita',
         headers: {'Content-Type': 'application/json'},
         data: {
           id: idBase,
@@ -52,7 +52,7 @@ axios.request(options).then(function (response) {
   
   const options = {
     method: 'DELETE',
-    url: 'http://localhost:5000/usuarios/borra',
+    url: 'https://floating-spire-36481.herokuapp.com/usuarios/borra',
     headers: {'Content-Type': 'application/json'},
     data: {id: idBase}
   };

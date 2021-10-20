@@ -12,7 +12,7 @@ function Page1() {
   const [Usuarios, setUsuarios] = useState([])
 
   useEffect(() => {
-    const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
+    const options = { method: 'GET', url: 'https://floating-spire-36481.herokuapp.com/usuarios' };
     axios.request(options).then(function (response) {
       console.log(response.data);
       setUsuarios(response.data)
@@ -47,7 +47,7 @@ function Page1() {
     if (bandera == false) {
       const options = {
         method: 'POST',
-        url: 'http://localhost:5000/usuarios/nuevo',
+        url: 'https://floating-spire-36481.herokuapp.com/usuarios/nuevo',
         headers: { 'Content-Type': 'application/json' },
         data: {
           nombreUsuario: response.profileObj.name,

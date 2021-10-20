@@ -13,7 +13,7 @@ const Page5 = () => {
     let estado= 0
     
     useEffect(async() => {
-      const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+      const options = { method: 'GET', url: 'https://floating-spire-36481.herokuapp.com/ventas' };
       await axios.request(options).then(function (response) {
         console.log(response.data);
         setVentas(response.data)
@@ -45,7 +45,7 @@ const Page5 = () => {
       const actualizarBaseDatos = async () => {   
         const options = {
           method: 'PATCH',
-          url: 'http://localhost:5000/ventas/edita',
+          url: 'https://floating-spire-36481.herokuapp.com/ventas/edita',
           headers: { 'Content-Type': 'application/json' },
           data: {
             id: IdBase,
